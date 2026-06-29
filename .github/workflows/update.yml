@@ -1,0 +1,29 @@
+name: Update Dashboard
+
+on:
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install pandas
+
+      - name: Run fetch script
+        run: python script/fetch_gsc.py
+
+      - name: Commit dashboard.json
+        run: |
+          git config user.name "SEO Bot"
+          git config user.email "bot@github.com"
+          git add data/dashboard.json
+          git diff --staged --quiet || git commit -m "update: dashboard data"
+          git push
