@@ -117,6 +117,12 @@
   .ctr-val { font-size: 13px; font-weight: 600; color: var(--red); min-width: 38px; text-align: right; }
   .ctr-imp { font-size: 11px; color: var(--faint); min-width: 54px; text-align: right; }
 
+  .ai-tips-wrap { display: flex; flex-direction: column; gap: 6px; margin-top: 8px; }
+  .ai-tip { background: var(--purple-bg); border-radius: 8px; padding: 7px 10px; display: flex; gap: 8px; align-items: flex-start; font-size: 12px; color: var(--purple); }
+  .ai-tip-icon { flex-shrink: 0; font-size: 13px; }
+  .ai-tip-label { font-weight: 600; }
+  .ai-tip-detail { color: #534AB7; }
+
   /* Keyword table */
   .kw-row { display: flex; align-items: center; gap: 8px; padding: 8px 16px; border-bottom: 1px solid var(--border); }
   .kw-row:last-child { border-bottom: none; }
@@ -267,14 +273,42 @@ function priorityLevel(item) {
   return 'med';
 }
 
+function aiReasons(item) {
+  const tips = [];
+
+  // 1. Title/Meta
+  if (item.ctr < 0.5 && item.impressions > 5000)
+    tips.push({ icon: '✏️', label: 'ปรับ title + meta', detail: 'CTR ต่ำมาก (' + item.ctr.toFixed(1) + '%) ทั้งที่ impression สูง — เปลี่ยน title ให้ดึงดูดขึ้น ใส่ตัวเลขหรือ emotion word' });
+  else if (item.ctr < 1.5 && item.impressions > 3000)
+    tips.push({ icon: '✏️', label: 'ปรับ title + meta', detail: 'CTR ยังต่ำกว่าเกณฑ์ — ลอง A/B title ใหม่ เพิ่ม keyword หลักไว้ต้นประโยค' });
+
+  // 2. Content depth
+  if (item.position > 15)
+    tips.push({ icon: '📝', label: 'เพิ่มความลึก content', detail: 'อันดับ ' + pos(item.position) + ' บ่งบอกว่า Google ยังมองว่าเนื้อหาไม่ครบ — เพิ่ม FAQ, ตาราง, หัวข้อย่อยให้ครอบคลุมกว่าคู่แข่ง' });
+  else if (item.position > 8)
+    tips.push({ icon: '📝', label: 'อัปเดตเนื้อหา', detail: 'บทความอาจเก่าแล้ว — ตรวจสอบข้อมูล ราคา หรือโบรกเกอร์ที่แนะนำว่ายังเป็นปัจจุบันไหม' });
+
+  // 3. Internal links
+  if (item.clicks < 50 && item.impressions > 5000)
+    tips.push({ icon: '🔗', label: 'เพิ่ม internal links', detail: 'บทความนี้มี impression สูงแต่ยังไม่มีคนลิงก์มาถึง — เพิ่ม link จากบทความยอดนิยมอื่นในเว็บมาชี้มาที่หน้านี้' });
+
+  // 4. Keyword
+  if (item.position > 5 && item.impressions > 8000)
+    tips.push({ icon: '🎯', label: 'เพิ่ม keyword ในเนื้อหา', detail: 'impression สูงแสดงว่า Google index keyword ได้แล้ว — ใส่ keyword หลักใน H2, H3 และ 100 คำแรกของบทความให้ชัดขึ้น' });
+
+  // 5. Quick win
+  if (item.position >= 6 && item.position <= 12 && item.impressions > 5000)
+    tips.push({ icon: '⚡', label: 'Quick win — ใกล้หน้า 1', detail: 'อันดับ ' + pos(item.position) + ' แค่ดันอีก ' + Math.ceil(item.position - 5) + ' อันดับก็ขึ้นหน้า 1 — เพิ่ม backlink 2-3 เส้นและปรับ H1 ให้ตรง keyword' });
+
+  if (tips.length === 0)
+    tips.push({ icon: '📊', label: 'ติดตามต่อเนื่อง', detail: 'impression สูง — ลองเพิ่มความยาว content และ internal link เพื่อดัน clicks' });
+
+  return tips;
+}
+
 function aiReason(item) {
-  if (item.ctr < 0.5 && item.impressions > 10000)
-    return 'impression สูงมาก แต่ CTR ต่ำมาก — ปรับ title และ meta description ได้เลย';
-  if (item.position > 30)
-    return 'อันดับ ' + pos(item.position) + ' ยังไกลหน้า 1 — เนื้อหาอาจต้องเพิ่มความลึก';
-  if (item.position > 10 && item.clicks > 100)
-    return 'clicks ดีแต่ยังหน้า 2 — ดันขึ้นอีกนิดก็ขึ้นหน้า 1';
-  return 'impression สูง — โอกาส optimize เพื่อเพิ่ม clicks';
+  const tips = aiReasons(item);
+  return tips[0].detail;
 }
 
 function renderMetrics(s) {
@@ -358,20 +392,29 @@ function renderPriorityMini(items) {
 function renderPriorityFull(items) {
   document.getElementById('priority-full').innerHTML = items.map(p => {
     const lv = priorityLevel(p);
+    const tips = aiReasons(p);
+    const tipsHtml = tips.map(t => `
+      <div class="ai-tip">
+        <span class="ai-tip-icon">${t.icon}</span>
+        <div>
+          <span class="ai-tip-label">${t.label}</span>
+          <span class="ai-tip-detail"> — ${t.detail}</span>
+        </div>
+      </div>`).join('');
     return `
     <div class="priority-item ${lv}">
       <div class="priority-top">
         <div class="priority-title"><a href="${p.url}" target="_blank">${slug(p.url)}</a></div>
         <span class="panel-badge ${lv==='high'?'badge-red':'badge-amber'}">${lv==='high'?'เร่งด่วน':'ติดตาม'}</span>
       </div>
-      <div class="row-url" style="margin-bottom:4px">${p.url}</div>
+      <div class="row-url" style="margin-bottom:6px;font-size:11px;color:var(--faint)">${p.url}</div>
       <div class="priority-meta">
         <span>อันดับ ${pos(p.position)}</span>
         <span>${fmt(p.impressions)} impressions</span>
         <span>${fmt(p.clicks)} clicks</span>
         <span>CTR ${p.ctr.toFixed(1)}%</span>
       </div>
-      <div class="ai-reason">&#x2728; ${aiReason(p)}</div>
+      <div class="ai-tips-wrap">${tipsHtml}</div>
     </div>`}).join('');
 }
 
