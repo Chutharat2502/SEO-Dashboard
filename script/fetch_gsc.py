@@ -1,10 +1,10 @@
 """
 fetch_gsc.py — อ่าน GSC CSV export แล้วสร้าง dashboard.json
-วิธีใช้: วาง CSV ไว้ใน data/exports/ แล้วรัน python scripts/fetch_gsc.py
+วิธีใช้: วาง CSV ไว้ใน data/export/ แล้วรัน python scripts/fetch_gsc.py
 """
 import csv, json, os, glob, datetime
 
-EXPORTS_DIR = "data/exports"
+EXPORTS_DIR = "data/export"
 OUTPUT_FILE = "data/dashboard.json"
 
 def read_pages(filepath):
