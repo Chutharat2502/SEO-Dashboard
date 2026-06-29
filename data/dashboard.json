@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-29 05:08:51.051400",
+  "generated_at": "2026-06-29 09:56:56.593698",
   "sites": {
-    "tradewithauntie.com": {
+    "Tradewithauntie": {
       "summary": {
         "total_pages": 551,
         "total_keywords": 1000,
@@ -339,6 +339,688 @@
           "impressions": 2547,
           "ctr": 0.12,
           "position": 5.26
+        }
+      ]
+    },
+    "Gotradehere": {
+      "summary": {
+        "total_pages": 506,
+        "total_keywords": 1000,
+        "total_clicks": 4829,
+        "total_impressions": 458250,
+        "avg_position": 20.6
+      },
+      "best_performers": [
+        {
+          "url": "https://www.gotradehere.com/6-brokers-free-bonus/",
+          "clicks": 1618,
+          "impressions": 45848,
+          "ctr": 3.53,
+          "position": 9.12
+        },
+        {
+          "url": "https://www.gotradehere.com/corporate-bonds-2569/",
+          "clicks": 427,
+          "impressions": 5065,
+          "ctr": 8.43,
+          "position": 10.56
+        },
+        {
+          "url": "https://www.gotradehere.com/14-candlestick-chart-pattern-reversal/",
+          "clicks": 362,
+          "impressions": 14579,
+          "ctr": 2.48,
+          "position": 3.66
+        },
+        {
+          "url": "https://www.gotradehere.com/review-broker-connextfx/",
+          "clicks": 352,
+          "impressions": 20713,
+          "ctr": 1.7,
+          "position": 5.78
+        },
+        {
+          "url": "https://www.gotradehere.com/hfm-deposit-and-withdrawal-methods/",
+          "clicks": 191,
+          "impressions": 3559,
+          "ctr": 5.37,
+          "position": 7.05
+        },
+        {
+          "url": "https://www.gotradehere.com/review-broker-bestonfx/",
+          "clicks": 152,
+          "impressions": 24091,
+          "ctr": 0.63,
+          "position": 5.03
+        },
+        {
+          "url": "https://www.gotradehere.com/review-brokers-interstellar-fx/",
+          "clicks": 147,
+          "impressions": 34028,
+          "ctr": 0.43,
+          "position": 6.34
+        },
+        {
+          "url": "https://www.gotradehere.com/review-brokers-cxm-direct/",
+          "clicks": 142,
+          "impressions": 7576,
+          "ctr": 1.87,
+          "position": 6.23
+        },
+        {
+          "url": "https://www.gotradehere.com/review-broker-iux/",
+          "clicks": 95,
+          "impressions": 18036,
+          "ctr": 0.53,
+          "position": 9.63
+        },
+        {
+          "url": "https://www.gotradehere.com/12-types-of-price-action-that-occur-most-often/",
+          "clicks": 94,
+          "impressions": 3766,
+          "ctr": 2.5,
+          "position": 9.67
+        }
+      ],
+      "quick_wins": [
+        {
+          "url": "https://www.gotradehere.com/6-brokers-free-bonus/",
+          "clicks": 1618,
+          "impressions": 45848,
+          "ctr": 3.53,
+          "position": 9.12
+        },
+        {
+          "url": "https://www.gotradehere.com/review-brokers-interstellar-fx/",
+          "clicks": 147,
+          "impressions": 34028,
+          "ctr": 0.43,
+          "position": 6.34
+        },
+        {
+          "url": "https://www.gotradehere.com/forex-market-opening-closing-time/",
+          "clicks": 22,
+          "impressions": 23732,
+          "ctr": 0.09,
+          "position": 8.62
+        },
+        {
+          "url": "https://www.gotradehere.com/review-broker-iux/",
+          "clicks": 95,
+          "impressions": 18036,
+          "ctr": 0.53,
+          "position": 9.63
+        },
+        {
+          "url": "https://www.gotradehere.com/review-brokers-cxm-direct/",
+          "clicks": 142,
+          "impressions": 7576,
+          "ctr": 1.87,
+          "position": 6.23
+        },
+        {
+          "url": "https://www.gotradehere.com/corporate-bonds-2569/",
+          "clicks": 427,
+          "impressions": 5065,
+          "ctr": 8.43,
+          "position": 10.56
+        },
+        {
+          "url": "https://www.gotradehere.com/hfm-review-broker/",
+          "clicks": 17,
+          "impressions": 3938,
+          "ctr": 0.43,
+          "position": 12.96
+        },
+        {
+          "url": "https://www.gotradehere.com/12-types-of-price-action-that-occur-most-often/",
+          "clicks": 94,
+          "impressions": 3766,
+          "ctr": 2.5,
+          "position": 9.67
+        },
+        {
+          "url": "https://www.gotradehere.com/hfm-deposit-and-withdrawal-methods/",
+          "clicks": 191,
+          "impressions": 3559,
+          "ctr": 5.37,
+          "position": 7.05
+        },
+        {
+          "url": "https://www.gotradehere.com/what-is-fiat-money/",
+          "clicks": 2,
+          "impressions": 3236,
+          "ctr": 0.06,
+          "position": 6.27
+        }
+      ],
+      "ai_priority": [
+        {
+          "url": "https://www.gotradehere.com/popular-stock-trading-apps-lately/",
+          "clicks": 31,
+          "impressions": 11620,
+          "ctr": 0.27,
+          "position": 17.51
+        },
+        {
+          "url": "https://www.gotradehere.com/top-5-low-spread-brokers-forex/",
+          "clicks": 27,
+          "impressions": 8441,
+          "ctr": 0.32,
+          "position": 17.38
+        },
+        {
+          "url": "https://www.gotradehere.com/forex-brokers-for-gold-trading/",
+          "clicks": 18,
+          "impressions": 8327,
+          "ctr": 0.22,
+          "position": 19.64
+        },
+        {
+          "url": "https://www.gotradehere.com/5-broker-trust-worthly/",
+          "clicks": 7,
+          "impressions": 8306,
+          "ctr": 0.08,
+          "position": 24.51
+        },
+        {
+          "url": "https://www.gotradehere.com/recommend-brokers-forex-topranks/",
+          "clicks": 3,
+          "impressions": 6836,
+          "ctr": 0.04,
+          "position": 36.57
+        },
+        {
+          "url": "https://www.gotradehere.com/top-5-best-forex-broker/",
+          "clicks": 1,
+          "impressions": 5407,
+          "ctr": 0.02,
+          "position": 24.16
+        },
+        {
+          "url": "https://www.gotradehere.com/corporate-bonds-2569/",
+          "clicks": 427,
+          "impressions": 5065,
+          "ctr": 8.43,
+          "position": 10.56
+        },
+        {
+          "url": "https://www.gotradehere.com/how-to-view-forex-factory-news/",
+          "clicks": 18,
+          "impressions": 5006,
+          "ctr": 0.36,
+          "position": 15.46
+        }
+      ],
+      "low_ctr": [
+        {
+          "url": "https://www.gotradehere.com/review-brokers-interstellar-fx/",
+          "clicks": 147,
+          "impressions": 34028,
+          "ctr": 0.43,
+          "position": 6.34
+        },
+        {
+          "url": "https://www.gotradehere.com/review-broker-bestonfx/",
+          "clicks": 152,
+          "impressions": 24091,
+          "ctr": 0.63,
+          "position": 5.03
+        },
+        {
+          "url": "https://www.gotradehere.com/forex-market-opening-closing-time/",
+          "clicks": 22,
+          "impressions": 23732,
+          "ctr": 0.09,
+          "position": 8.62
+        },
+        {
+          "url": "https://www.gotradehere.com/review-broker-iux/",
+          "clicks": 95,
+          "impressions": 18036,
+          "ctr": 0.53,
+          "position": 9.63
+        },
+        {
+          "url": "https://www.gotradehere.com/popular-stock-trading-apps-lately/",
+          "clicks": 31,
+          "impressions": 11620,
+          "ctr": 0.27,
+          "position": 17.51
+        },
+        {
+          "url": "https://www.gotradehere.com/top-5-low-spread-brokers-forex/",
+          "clicks": 27,
+          "impressions": 8441,
+          "ctr": 0.32,
+          "position": 17.38
+        },
+        {
+          "url": "https://www.gotradehere.com/forex-brokers-for-gold-trading/",
+          "clicks": 18,
+          "impressions": 8327,
+          "ctr": 0.22,
+          "position": 19.64
+        },
+        {
+          "url": "https://www.gotradehere.com/5-broker-trust-worthly/",
+          "clicks": 7,
+          "impressions": 8306,
+          "ctr": 0.08,
+          "position": 24.51
+        }
+      ],
+      "keyword_wins": [
+        {
+          "keyword": "beston fx",
+          "clicks": 22,
+          "impressions": 9766,
+          "ctr": 0.23,
+          "position": 5.18
+        },
+        {
+          "keyword": "interstellar broker",
+          "clicks": 15,
+          "impressions": 8294,
+          "ctr": 0.18,
+          "position": 5.65
+        },
+        {
+          "keyword": "connext",
+          "clicks": 7,
+          "impressions": 6295,
+          "ctr": 0.11,
+          "position": 4.89
+        },
+        {
+          "keyword": "bestonfx",
+          "clicks": 28,
+          "impressions": 6255,
+          "ctr": 0.45,
+          "position": 4.21
+        },
+        {
+          "keyword": "interstellar forex",
+          "clicks": 4,
+          "impressions": 5338,
+          "ctr": 0.07,
+          "position": 6.26
+        },
+        {
+          "keyword": "fisg",
+          "clicks": 15,
+          "impressions": 4124,
+          "ctr": 0.36,
+          "position": 5.32
+        },
+        {
+          "keyword": "แจกเครดิตเทรดฟรี",
+          "clicks": 15,
+          "impressions": 3665,
+          "ctr": 0.41,
+          "position": 8.57
+        },
+        {
+          "keyword": "โบนัสเทรดฟรี 50",
+          "clicks": 64,
+          "impressions": 3091,
+          "ctr": 2.07,
+          "position": 7.38
+        },
+        {
+          "keyword": "interstellar fx",
+          "clicks": 1,
+          "impressions": 2362,
+          "ctr": 0.04,
+          "position": 6.02
+        },
+        {
+          "keyword": "โบนัสเทรดฟรี ถอนได้ ไม่ต้องฝาก 2569",
+          "clicks": 132,
+          "impressions": 2180,
+          "ctr": 6.06,
+          "position": 5.78
+        }
+      ]
+    },
+    "Traderbobo": {
+      "summary": {
+        "total_pages": 452,
+        "total_keywords": 1000,
+        "total_clicks": 4569,
+        "total_impressions": 480672,
+        "avg_position": 17.3
+      },
+      "best_performers": [
+        {
+          "url": "https://traderbobo.com/what-is-ftmo-fund-exam-and-is-it-worth-it/",
+          "clicks": 732,
+          "impressions": 30975,
+          "ctr": 2.36,
+          "position": 4.97
+        },
+        {
+          "url": "https://traderbobo.com/what-is-topstep-funding/",
+          "clicks": 696,
+          "impressions": 35176,
+          "ctr": 1.98,
+          "position": 4.42
+        },
+        {
+          "url": "https://traderbobo.com/what-is-the-5ers-bootcamp-and-fund-exam-review/",
+          "clicks": 296,
+          "impressions": 15483,
+          "ctr": 1.91,
+          "position": 4.25
+        },
+        {
+          "url": "https://traderbobo.com/12-types-of-price-action-high-reversal/",
+          "clicks": 202,
+          "impressions": 6992,
+          "ctr": 2.89,
+          "position": 8.77
+        },
+        {
+          "url": "https://traderbobo.com/how-to-buy-sell-forex-for-beginners/",
+          "clicks": 178,
+          "impressions": 6526,
+          "ctr": 2.73,
+          "position": 9.37
+        },
+        {
+          "url": "https://traderbobo.com/what-is-a-forex-fund-exam/",
+          "clicks": 168,
+          "impressions": 9518,
+          "ctr": 1.77,
+          "position": 7.31
+        },
+        {
+          "url": "https://traderbobo.com/mitrade-review/",
+          "clicks": 156,
+          "impressions": 6666,
+          "ctr": 2.34,
+          "position": 7.86
+        },
+        {
+          "url": "https://traderbobo.com/best-free-swap-forex-broker/",
+          "clicks": 145,
+          "impressions": 8839,
+          "ctr": 1.64,
+          "position": 18.72
+        },
+        {
+          "url": "https://traderbobo.com/what-is-forex-factory-and-how-use-it/",
+          "clicks": 142,
+          "impressions": 23562,
+          "ctr": 0.6,
+          "position": 8.89
+        },
+        {
+          "url": "https://traderbobo.com/iux-broker-review/",
+          "clicks": 134,
+          "impressions": 8738,
+          "ctr": 1.53,
+          "position": 11.61
+        }
+      ],
+      "quick_wins": [
+        {
+          "url": "https://traderbobo.com/what-is-forex-factory-and-how-use-it/",
+          "clicks": 142,
+          "impressions": 23562,
+          "ctr": 0.6,
+          "position": 8.89
+        },
+        {
+          "url": "https://traderbobo.com/what-is-a-forex-fund-exam/",
+          "clicks": 168,
+          "impressions": 9518,
+          "ctr": 1.77,
+          "position": 7.31
+        },
+        {
+          "url": "https://traderbobo.com/iux-broker-review/",
+          "clicks": 134,
+          "impressions": 8738,
+          "ctr": 1.53,
+          "position": 11.61
+        },
+        {
+          "url": "https://traderbobo.com/what-is-fvg-forex-trading-and-examples-of-its-use/",
+          "clicks": 89,
+          "impressions": 8011,
+          "ctr": 1.11,
+          "position": 7.8
+        },
+        {
+          "url": "https://traderbobo.com/12-types-of-price-action-high-reversal/",
+          "clicks": 202,
+          "impressions": 6992,
+          "ctr": 2.89,
+          "position": 8.77
+        },
+        {
+          "url": "https://traderbobo.com/mitrade-review/",
+          "clicks": 156,
+          "impressions": 6666,
+          "ctr": 2.34,
+          "position": 7.86
+        },
+        {
+          "url": "https://traderbobo.com/how-to-buy-sell-forex-for-beginners/",
+          "clicks": 178,
+          "impressions": 6526,
+          "ctr": 2.73,
+          "position": 9.37
+        },
+        {
+          "url": "https://traderbobo.com/what-is-finviz-and-its-use-in-forex/",
+          "clicks": 11,
+          "impressions": 6042,
+          "ctr": 0.18,
+          "position": 8.59
+        },
+        {
+          "url": "https://traderbobo.com/what-is-forex-tax-and-how-to-calculate-it/",
+          "clicks": 66,
+          "impressions": 4929,
+          "ctr": 1.34,
+          "position": 8.54
+        },
+        {
+          "url": "https://traderbobo.com/what-is-a-forex-fund-exam/#%E0%B8%82%E0%B9%89%E0%B8%AD%E0%B8%94%E0%B8%B5-%E0%B8%82%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%AA%E0%B8%B5%E0%B8%A2%E0%B9%83%E0%B8%99%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%AA%E0%B8%AD%E0%B8%9A%E0%B8%81%E0%B8%AD%E0%B8%87%E0%B8%97%E0%B8%B8%E0%B8%99-forex",
+          "clicks": 1,
+          "impressions": 4445,
+          "ctr": 0.02,
+          "position": 7.03
+        }
+      ],
+      "ai_priority": [
+        {
+          "url": "https://traderbobo.com/trusted-forex-brokers-in-thailand/",
+          "clicks": 7,
+          "impressions": 12994,
+          "ctr": 0.05,
+          "position": 52.63
+        },
+        {
+          "url": "https://traderbobo.com/which-forex-broker-is-the-best-to-trade/",
+          "clicks": 3,
+          "impressions": 12017,
+          "ctr": 0.02,
+          "position": 38.01
+        },
+        {
+          "url": "https://traderbobo.com/forex-market-hours/",
+          "clicks": 11,
+          "impressions": 11147,
+          "ctr": 0.1,
+          "position": 19.74
+        },
+        {
+          "url": "https://traderbobo.com/the-best-forex-brokers-free-bonus/",
+          "clicks": 98,
+          "impressions": 9200,
+          "ctr": 1.07,
+          "position": 34.03
+        },
+        {
+          "url": "https://traderbobo.com/best-free-swap-forex-broker/",
+          "clicks": 145,
+          "impressions": 8839,
+          "ctr": 1.64,
+          "position": 18.72
+        },
+        {
+          "url": "https://traderbobo.com/iux-broker-review/",
+          "clicks": 134,
+          "impressions": 8738,
+          "ctr": 1.53,
+          "position": 11.61
+        },
+        {
+          "url": "https://traderbobo.com/what-is-forex-gold-trading-and-get-to-know-xauusd/",
+          "clicks": 11,
+          "impressions": 8274,
+          "ctr": 0.13,
+          "position": 31.7
+        },
+        {
+          "url": "https://traderbobo.com/review-broker-exness/",
+          "clicks": 18,
+          "impressions": 7294,
+          "ctr": 0.25,
+          "position": 15.39
+        }
+      ],
+      "low_ctr": [
+        {
+          "url": "https://traderbobo.com/what-is-forex-factory-and-how-use-it/",
+          "clicks": 142,
+          "impressions": 23562,
+          "ctr": 0.6,
+          "position": 8.89
+        },
+        {
+          "url": "https://traderbobo.com/trusted-forex-brokers-in-thailand/",
+          "clicks": 7,
+          "impressions": 12994,
+          "ctr": 0.05,
+          "position": 52.63
+        },
+        {
+          "url": "https://traderbobo.com/which-forex-broker-is-the-best-to-trade/",
+          "clicks": 3,
+          "impressions": 12017,
+          "ctr": 0.02,
+          "position": 38.01
+        },
+        {
+          "url": "https://traderbobo.com/forex-market-hours/",
+          "clicks": 11,
+          "impressions": 11147,
+          "ctr": 0.1,
+          "position": 19.74
+        },
+        {
+          "url": "https://traderbobo.com/the-best-forex-brokers-free-bonus/",
+          "clicks": 98,
+          "impressions": 9200,
+          "ctr": 1.07,
+          "position": 34.03
+        },
+        {
+          "url": "https://traderbobo.com/what-is-forex-gold-trading-and-get-to-know-xauusd/",
+          "clicks": 11,
+          "impressions": 8274,
+          "ctr": 0.13,
+          "position": 31.7
+        },
+        {
+          "url": "https://traderbobo.com/what-is-fvg-forex-trading-and-examples-of-its-use/",
+          "clicks": 89,
+          "impressions": 8011,
+          "ctr": 1.11,
+          "position": 7.8
+        },
+        {
+          "url": "https://traderbobo.com/review-broker-exness/",
+          "clicks": 18,
+          "impressions": 7294,
+          "ctr": 0.25,
+          "position": 15.39
+        }
+      ],
+      "keyword_wins": [
+        {
+          "keyword": "topstep",
+          "clicks": 187,
+          "impressions": 24196,
+          "ctr": 0.77,
+          "position": 4.56
+        },
+        {
+          "keyword": "ftmo",
+          "clicks": 31,
+          "impressions": 10318,
+          "ctr": 0.3,
+          "position": 4.26
+        },
+        {
+          "keyword": "finviz forex",
+          "clicks": 0,
+          "impressions": 3550,
+          "ctr": 0.0,
+          "position": 8.79
+        },
+        {
+          "keyword": "ฟอเร็กแฟคตอรี่",
+          "clicks": 0,
+          "impressions": 2183,
+          "ctr": 0.0,
+          "position": 6.37
+        },
+        {
+          "keyword": "the5ers",
+          "clicks": 12,
+          "impressions": 2096,
+          "ctr": 0.57,
+          "position": 4.36
+        },
+        {
+          "keyword": "พอร์ตแตกคืออะไร",
+          "clicks": 4,
+          "impressions": 2072,
+          "ctr": 0.19,
+          "position": 8.24
+        },
+        {
+          "keyword": "unemployment claims",
+          "clicks": 0,
+          "impressions": 1503,
+          "ctr": 0.0,
+          "position": 7.04
+        },
+        {
+          "keyword": "forex factory ภาษาไทย",
+          "clicks": 16,
+          "impressions": 1456,
+          "ctr": 1.1,
+          "position": 4.09
+        },
+        {
+          "keyword": "indicator แปลว่า",
+          "clicks": 1,
+          "impressions": 1431,
+          "ctr": 0.07,
+          "position": 7.26
+        },
+        {
+          "keyword": "harmonic pattern",
+          "clicks": 46,
+          "impressions": 1316,
+          "ctr": 3.5,
+          "position": 5.71
         }
       ]
     }
