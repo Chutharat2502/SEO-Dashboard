@@ -1,0 +1,346 @@
+{
+  "generated_at": "2026-06-29 05:08:51.051400",
+  "sites": {
+    "tradewithauntie.com": {
+      "summary": {
+        "total_pages": 551,
+        "total_keywords": 1000,
+        "total_clicks": 5268,
+        "total_impressions": 604149,
+        "avg_position": 21.5
+      },
+      "best_performers": [
+        {
+          "url": "https://www.tradewithauntie.com/low-fee-stock-brokers/",
+          "clicks": 371,
+          "impressions": 15175,
+          "ctr": 2.44,
+          "position": 13.95
+        },
+        {
+          "url": "https://www.tradewithauntie.com/review-interstellar-fx/",
+          "clicks": 310,
+          "impressions": 34275,
+          "ctr": 0.9,
+          "position": 6.28
+        },
+        {
+          "url": "https://www.tradewithauntie.com/5-best-forex-xauusd/",
+          "clicks": 277,
+          "impressions": 18074,
+          "ctr": 1.53,
+          "position": 10.27
+        },
+        {
+          "url": "https://www.tradewithauntie.com/review-kvb-broker/",
+          "clicks": 276,
+          "impressions": 8170,
+          "ctr": 3.38,
+          "position": 5.37
+        },
+        {
+          "url": "https://www.tradewithauntie.com/review-hfm/",
+          "clicks": 271,
+          "impressions": 13249,
+          "ctr": 2.05,
+          "position": 8.87
+        },
+        {
+          "url": "https://www.tradewithauntie.com/review-broker-connextfx/",
+          "clicks": 220,
+          "impressions": 5656,
+          "ctr": 3.89,
+          "position": 7.02
+        },
+        {
+          "url": "https://www.tradewithauntie.com/review-broker-connext/",
+          "clicks": 161,
+          "impressions": 5772,
+          "ctr": 2.79,
+          "position": 5.92
+        },
+        {
+          "url": "https://www.tradewithauntie.com/review-broker-xm/",
+          "clicks": 138,
+          "impressions": 34215,
+          "ctr": 0.4,
+          "position": 16.5
+        },
+        {
+          "url": "https://www.tradewithauntie.com/bestonfx-review/",
+          "clicks": 123,
+          "impressions": 11118,
+          "ctr": 1.11,
+          "position": 7.46
+        },
+        {
+          "url": "https://www.tradewithauntie.com/trading-forex-with-iux-for-beginner/",
+          "clicks": 122,
+          "impressions": 5480,
+          "ctr": 2.23,
+          "position": 6.74
+        }
+      ],
+      "quick_wins": [
+        {
+          "url": "https://www.tradewithauntie.com/review-interstellar-fx/",
+          "clicks": 310,
+          "impressions": 34275,
+          "ctr": 0.9,
+          "position": 6.28
+        },
+        {
+          "url": "https://www.tradewithauntie.com/5-best-forex-xauusd/",
+          "clicks": 277,
+          "impressions": 18074,
+          "ctr": 1.53,
+          "position": 10.27
+        },
+        {
+          "url": "https://www.tradewithauntie.com/low-fee-stock-brokers/",
+          "clicks": 371,
+          "impressions": 15175,
+          "ctr": 2.44,
+          "position": 13.95
+        },
+        {
+          "url": "https://www.tradewithauntie.com/review-eightcap/",
+          "clicks": 97,
+          "impressions": 14606,
+          "ctr": 0.66,
+          "position": 7.34
+        },
+        {
+          "url": "https://www.tradewithauntie.com/review-hfm/",
+          "clicks": 271,
+          "impressions": 13249,
+          "ctr": 2.05,
+          "position": 8.87
+        },
+        {
+          "url": "https://www.tradewithauntie.com/review-exness/",
+          "clicks": 49,
+          "impressions": 13128,
+          "ctr": 0.37,
+          "position": 12.41
+        },
+        {
+          "url": "https://www.tradewithauntie.com/get-to-know-swift-code/",
+          "clicks": 26,
+          "impressions": 12613,
+          "ctr": 0.21,
+          "position": 9.43
+        },
+        {
+          "url": "https://www.tradewithauntie.com/bestonfx-review/",
+          "clicks": 123,
+          "impressions": 11118,
+          "ctr": 1.11,
+          "position": 7.46
+        },
+        {
+          "url": "https://www.tradewithauntie.com/review-broker-iq-option/",
+          "clicks": 88,
+          "impressions": 10604,
+          "ctr": 0.83,
+          "position": 9.29
+        },
+        {
+          "url": "https://www.tradewithauntie.com/auntie-review-broker-iux/",
+          "clicks": 60,
+          "impressions": 9918,
+          "ctr": 0.6,
+          "position": 13.97
+        }
+      ],
+      "ai_priority": [
+        {
+          "url": "https://www.tradewithauntie.com/review-broker-xm/",
+          "clicks": 138,
+          "impressions": 34215,
+          "ctr": 0.4,
+          "position": 16.5
+        },
+        {
+          "url": "https://www.tradewithauntie.com/5-best-forex-xauusd/",
+          "clicks": 277,
+          "impressions": 18074,
+          "ctr": 1.53,
+          "position": 10.27
+        },
+        {
+          "url": "https://www.tradewithauntie.com/recommended-brokers-for-beginner-traders/",
+          "clicks": 17,
+          "impressions": 17850,
+          "ctr": 0.1,
+          "position": 33.09
+        },
+        {
+          "url": "https://www.tradewithauntie.com/5-best-brokers/",
+          "clicks": 36,
+          "impressions": 17233,
+          "ctr": 0.21,
+          "position": 44.65
+        },
+        {
+          "url": "https://www.tradewithauntie.com/low-fee-stock-brokers/",
+          "clicks": 371,
+          "impressions": 15175,
+          "ctr": 2.44,
+          "position": 13.95
+        },
+        {
+          "url": "https://www.tradewithauntie.com/how-to-trade-xauusd/",
+          "clicks": 27,
+          "impressions": 14943,
+          "ctr": 0.18,
+          "position": 37.36
+        },
+        {
+          "url": "https://www.tradewithauntie.com/review-exness/",
+          "clicks": 49,
+          "impressions": 13128,
+          "ctr": 0.37,
+          "position": 12.41
+        },
+        {
+          "url": "https://www.tradewithauntie.com/3-best-broker-in-thai/",
+          "clicks": 9,
+          "impressions": 11353,
+          "ctr": 0.08,
+          "position": 58.29
+        }
+      ],
+      "low_ctr": [
+        {
+          "url": "https://www.tradewithauntie.com/review-interstellar-fx/",
+          "clicks": 310,
+          "impressions": 34275,
+          "ctr": 0.9,
+          "position": 6.28
+        },
+        {
+          "url": "https://www.tradewithauntie.com/review-broker-xm/",
+          "clicks": 138,
+          "impressions": 34215,
+          "ctr": 0.4,
+          "position": 16.5
+        },
+        {
+          "url": "https://www.tradewithauntie.com/recommended-brokers-for-beginner-traders/",
+          "clicks": 17,
+          "impressions": 17850,
+          "ctr": 0.1,
+          "position": 33.09
+        },
+        {
+          "url": "https://www.tradewithauntie.com/5-best-brokers/",
+          "clicks": 36,
+          "impressions": 17233,
+          "ctr": 0.21,
+          "position": 44.65
+        },
+        {
+          "url": "https://www.tradewithauntie.com/how-to-trade-xauusd/",
+          "clicks": 27,
+          "impressions": 14943,
+          "ctr": 0.18,
+          "position": 37.36
+        },
+        {
+          "url": "https://www.tradewithauntie.com/review-eightcap/",
+          "clicks": 97,
+          "impressions": 14606,
+          "ctr": 0.66,
+          "position": 7.34
+        },
+        {
+          "url": "https://www.tradewithauntie.com/what-is-unemployment-claims/",
+          "clicks": 1,
+          "impressions": 13611,
+          "ctr": 0.01,
+          "position": 5.6
+        },
+        {
+          "url": "https://www.tradewithauntie.com/review-exness/",
+          "clicks": 49,
+          "impressions": 13128,
+          "ctr": 0.37,
+          "position": 12.41
+        }
+      ],
+      "keyword_wins": [
+        {
+          "keyword": "unemployment claims คือ",
+          "clicks": 0,
+          "impressions": 11422,
+          "ctr": 0.0,
+          "position": 4.92
+        },
+        {
+          "keyword": "interstellar broker",
+          "clicks": 36,
+          "impressions": 9689,
+          "ctr": 0.37,
+          "position": 5.71
+        },
+        {
+          "keyword": "eightcap",
+          "clicks": 11,
+          "impressions": 6180,
+          "ctr": 0.18,
+          "position": 7.02
+        },
+        {
+          "keyword": "interstellar forex",
+          "clicks": 10,
+          "impressions": 4642,
+          "ctr": 0.22,
+          "position": 6.18
+        },
+        {
+          "keyword": "beston fx",
+          "clicks": 7,
+          "impressions": 4135,
+          "ctr": 0.17,
+          "position": 7.58
+        },
+        {
+          "keyword": "smc คือ",
+          "clicks": 4,
+          "impressions": 3828,
+          "ctr": 0.1,
+          "position": 7.48
+        },
+        {
+          "keyword": "exness pantip",
+          "clicks": 0,
+          "impressions": 3144,
+          "ctr": 0.0,
+          "position": 6.58
+        },
+        {
+          "keyword": "gdp คือ",
+          "clicks": 0,
+          "impressions": 3001,
+          "ctr": 0.0,
+          "position": 4.98
+        },
+        {
+          "keyword": "bestonfx",
+          "clicks": 4,
+          "impressions": 2581,
+          "ctr": 0.15,
+          "position": 7.92
+        },
+        {
+          "keyword": "tf ย่อมาจาก",
+          "clicks": 3,
+          "impressions": 2547,
+          "ctr": 0.12,
+          "position": 5.26
+        }
+      ]
+    }
+  }
+}

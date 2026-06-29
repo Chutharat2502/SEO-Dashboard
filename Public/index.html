@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEO Dashboard — tradewithauntie.com</title>
+<style>
+  :root {
+    --bg: #f5f4f0;
+    --surface: #ffffff;
+    --border: #e4e2db;
+    --text: #1a1a18;
+    --muted: #6b6b66;
+    --faint: #9a9a94;
+    --blue: #185FA5;
+    --blue-bg: #E6F1FB;
+    --blue-border: #B5D4F4;
+    --green: #27500A;
+    --green-bg: #EAF3DE;
+    --amber: #633806;
+    --amber-bg: #FAEEDA;
+    --amber-border: #FAC775;
+    --red: #A32D2D;
+    --red-bg: #FCEBEB;
+    --red-border: #F7C1C1;
+    --purple: #3C3489;
+    --purple-bg: #EEEDFE;
+    --radius: 10px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, "Segoe UI", sans-serif; font-size: 14px; line-height: 1.6; }
+
+  /* Layout */
+  .topbar { background: var(--surface); border-bottom: 1px solid var(--border); padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 52px; position: sticky; top: 0; z-index: 10; }
+  .topbar-left { display: flex; align-items: center; gap: 10px; }
+  .logo { font-size: 15px; font-weight: 600; }
+  .live-dot { width: 7px; height: 7px; border-radius: 50%; background: #3B6D11; display: inline-block; }
+  .live-badge { background: var(--green-bg); color: var(--green); font-size: 11px; padding: 2px 8px; border-radius: 20px; display: flex; align-items: center; gap: 5px; }
+  .sync-note { font-size: 12px; color: var(--faint); }
+
+  /* Site switcher */
+  .site-bar { background: var(--surface); border-bottom: 1px solid var(--border); padding: 0 24px; display: flex; align-items: center; gap: 8px; height: 44px; overflow-x: auto; }
+  .site-chip { display: flex; align-items: center; gap: 6px; font-size: 12px; padding: 4px 12px; border-radius: 20px; border: 1px solid var(--border); cursor: pointer; white-space: nowrap; background: transparent; color: var(--muted); transition: all 0.15s; }
+  .site-chip.active { background: var(--blue-bg); color: var(--blue); border-color: var(--blue-border); font-weight: 500; }
+  .site-dot { width: 6px; height: 6px; border-radius: 50%; }
+
+  /* Main */
+  .main { max-width: 1100px; margin: 0 auto; padding: 20px 24px 48px; }
+
+  /* Tabs */
+  .tabs { display: flex; gap: 0; border-bottom: 1px solid var(--border); margin-bottom: 20px; }
+  .tab { font-size: 13px; padding: 8px 16px; cursor: pointer; color: var(--muted); border-bottom: 2px solid transparent; margin-bottom: -1px; transition: all 0.15s; background: none; border-top: none; border-left: none; border-right: none; }
+  .tab.active { color: var(--blue); border-bottom-color: var(--blue); font-weight: 500; }
+  .tab:hover:not(.active) { color: var(--text); }
+
+  /* Metric cards */
+  .metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 20px; }
+  .metric { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; }
+  .metric-label { font-size: 11px; color: var(--faint); margin-bottom: 6px; display: flex; align-items: center; gap: 5px; }
+  .metric-val { font-size: 24px; font-weight: 600; }
+  .metric-sub { font-size: 11px; color: var(--muted); margin-top: 3px; }
+  .val-green { color: #1D9E75; }
+  .val-red { color: #E24B4A; }
+  .val-blue { color: var(--blue); }
+  .val-amber { color: #BA7517; }
+
+  /* Panels */
+  .panels { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .panel-full { grid-column: 1 / -1; }
+  .panel { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+  .panel-head { padding: 14px 16px 12px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+  .panel-title { font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 7px; }
+  .panel-badge { font-size: 10px; padding: 2px 7px; border-radius: 8px; font-weight: 500; }
+  .badge-purple { background: var(--purple-bg); color: var(--purple); }
+  .badge-green  { background: var(--green-bg);  color: var(--green); }
+  .badge-amber  { background: var(--amber-bg);  color: var(--amber); }
+  .badge-blue   { background: var(--blue-bg);   color: var(--blue); }
+  .badge-red    { background: var(--red-bg);    color: var(--red); }
+  .panel-updated { font-size: 11px; color: var(--faint); }
+
+  /* Table rows */
+  .row { display: flex; align-items: center; gap: 10px; padding: 10px 16px; border-bottom: 1px solid var(--border); transition: background 0.1s; }
+  .row:last-child { border-bottom: none; }
+  .row:hover { background: #fafaf8; }
+  .row-rank { width: 22px; font-size: 12px; color: var(--faint); text-align: center; flex-shrink: 0; font-weight: 500; }
+  .rank-1 { color: #BA7517; }
+  .rank-2 { color: var(--muted); }
+  .rank-3 { color: #993C1D; }
+  .row-info { flex: 1; min-width: 0; }
+  .row-title { font-size: 13px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .row-url { font-size: 11px; color: var(--faint); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .row-stats { display: flex; gap: 14px; flex-shrink: 0; }
+  .stat { text-align: right; }
+  .stat-val { font-size: 13px; font-weight: 500; }
+  .stat-lbl { font-size: 10px; color: var(--faint); }
+  .mini-bar-wrap { width: 60px; height: 4px; background: var(--border); border-radius: 2px; margin-top: 6px; }
+  .mini-bar { height: 100%; border-radius: 2px; background: #B5D4F4; }
+  .mini-bar.gold { background: #EF9F27; }
+
+  /* Priority items */
+  .priority-item { padding: 12px 16px; border-bottom: 1px solid var(--border); border-left: 3px solid transparent; }
+  .priority-item:last-child { border-bottom: none; }
+  .priority-item.high { border-left-color: #E24B4A; }
+  .priority-item.med  { border-left-color: #EF9F27; }
+  .priority-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 4px; }
+  .priority-title { font-size: 13px; font-weight: 500; flex: 1; }
+  .priority-meta { font-size: 11px; color: var(--faint); display: flex; gap: 10px; margin-bottom: 6px; }
+  .ai-reason { font-size: 11px; color: var(--purple); background: var(--purple-bg); border-radius: 6px; padding: 4px 9px; display: flex; align-items: flex-start; gap: 5px; }
+
+  /* Low CTR */
+  .ctr-item { display: flex; align-items: center; gap: 10px; padding: 10px 16px; border-bottom: 1px solid var(--border); }
+  .ctr-item:last-child { border-bottom: none; }
+  .ctr-bar-wrap { flex: 1; }
+  .ctr-label { font-size: 11px; color: var(--muted); margin-bottom: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .ctr-bar-bg { height: 6px; background: var(--border); border-radius: 3px; }
+  .ctr-bar-fill { height: 100%; border-radius: 3px; background: #F09595; }
+  .ctr-val { font-size: 13px; font-weight: 600; color: var(--red); min-width: 38px; text-align: right; }
+  .ctr-imp { font-size: 11px; color: var(--faint); min-width: 54px; text-align: right; }
+
+  /* Keyword table */
+  .kw-row { display: flex; align-items: center; gap: 8px; padding: 8px 16px; border-bottom: 1px solid var(--border); }
+  .kw-row:last-child { border-bottom: none; }
+  .kw-keyword { flex: 1; font-size: 13px; }
+  .kw-pos { font-size: 12px; font-weight: 500; min-width: 32px; text-align: right; }
+  .kw-imp { font-size: 11px; color: var(--muted); min-width: 52px; text-align: right; }
+  .pos-good { color: #1D9E75; }
+  .pos-mid  { color: #BA7517; }
+  .pos-bad  { color: var(--red); }
+
+  /* Utility */
+  .section-hidden { display: none; }
+  a { color: inherit; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .icon { font-size: 14px; opacity: 0.6; }
+  @media (max-width: 700px) {
+    .metrics { grid-template-columns: repeat(2, 1fr); }
+    .panels { grid-template-columns: 1fr; }
+    .panel-full { grid-column: 1; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-left">
+    <span class="logo">SEO Dashboard</span>
+    <span class="live-badge"><span class="live-dot"></span> live</span>
+  </div>
+  <span class="sync-note" id="sync-note">กำลังโหลด...</span>
+</div>
+
+<div class="site-bar" id="site-bar"></div>
+
+<div class="main">
+  <div class="tabs">
+    <button class="tab active" onclick="showTab('overview')">ภาพรวม</button>
+    <button class="tab" onclick="showTab('best')">Best performance</button>
+    <button class="tab" onclick="showTab('priority')">AI Priority</button>
+    <button class="tab" onclick="showTab('quickwin')">Quick wins</button>
+    <button class="tab" onclick="showTab('ctr')">Low CTR</button>
+    <button class="tab" onclick="showTab('keywords')">Keywords</button>
+  </div>
+
+  <div id="tab-overview">
+    <div class="metrics" id="metrics"></div>
+    <div class="panels">
+      <div class="panel">
+        <div class="panel-head">
+          <div class="panel-title">
+            &#x1F3C6; best performance
+            <span class="panel-badge badge-green">top clicks</span>
+          </div>
+        </div>
+        <div id="best-mini"></div>
+      </div>
+      <div class="panel">
+        <div class="panel-head">
+          <div class="panel-title">
+            &#x26A1; AI Priority Alert
+            <span class="panel-badge badge-purple">auto-detected</span>
+          </div>
+        </div>
+        <div id="priority-mini"></div>
+      </div>
+      <div class="panel panel-full">
+        <div class="panel-head">
+          <div class="panel-title">
+            &#x1F3AF; Quick wins
+            <span class="panel-badge badge-amber">อันดับ 6–15, impression สูง</span>
+          </div>
+        </div>
+        <div id="quickwin-mini"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="tab-best" class="section-hidden">
+    <div class="panel">
+      <div class="panel-head">
+        <div class="panel-title">Best performance <span class="panel-badge badge-green">top 10 by clicks</span></div>
+      </div>
+      <div id="best-full"></div>
+    </div>
+  </div>
+
+  <div id="tab-priority" class="section-hidden">
+    <div class="panel">
+      <div class="panel-head">
+        <div class="panel-title">AI Priority Alert <span class="panel-badge badge-purple">ต้องแก้ก่อน</span></div>
+        <span class="panel-updated">วิเคราะห์จาก impressions × position × clicks</span>
+      </div>
+      <div id="priority-full"></div>
+    </div>
+  </div>
+
+  <div id="tab-quickwin" class="section-hidden">
+    <div class="panel">
+      <div class="panel-head">
+        <div class="panel-title">Quick wins <span class="panel-badge badge-amber">อันดับ 6–15</span></div>
+        <span class="panel-updated">ดันขึ้นหน้า 1 ได้เร็ว</span>
+      </div>
+      <div id="quickwin-full"></div>
+    </div>
+  </div>
+
+  <div id="tab-ctr" class="section-hidden">
+    <div class="panel">
+      <div class="panel-head">
+        <div class="panel-title">Low CTR <span class="panel-badge badge-red">ปรับ title/meta ได้เลย</span></div>
+        <span class="panel-updated">impression สูง แต่ CTR &lt; 1.5%</span>
+      </div>
+      <div id="ctr-full"></div>
+    </div>
+  </div>
+
+  <div id="tab-keywords" class="section-hidden">
+    <div class="panel">
+      <div class="panel-head">
+        <div class="panel-title">Keyword quick wins <span class="panel-badge badge-blue">pos 4–10</span></div>
+      </div>
+      <div id="kw-full"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+let DATA = null;
+let ACTIVE_SITE = null;
+
+function slug(url) {
+  try {
+    const p = new URL(url).pathname.replace(/\/$/, '').split('/').pop();
+    return p || url;
+  } catch { return url; }
+}
+
+function fmt(n) { return Number(n).toLocaleString(); }
+function pos(p) { return parseFloat(p).toFixed(1); }
+function ctrClass(p) {
+  if (p <= 5) return 'pos-good';
+  if (p <= 12) return 'pos-mid';
+  return 'pos-bad';
+}
+
+function priorityLevel(item) {
+  if (item.position > 30 || (item.impressions > 10000 && item.ctr < 0.5)) return 'high';
+  return 'med';
+}
+
+function aiReason(item) {
+  if (item.ctr < 0.5 && item.impressions > 10000)
+    return 'impression สูงมาก แต่ CTR ต่ำมาก — ปรับ title และ meta description ได้เลย';
+  if (item.position > 30)
+    return 'อันดับ ' + pos(item.position) + ' ยังไกลหน้า 1 — เนื้อหาอาจต้องเพิ่มความลึก';
+  if (item.position > 10 && item.clicks > 100)
+    return 'clicks ดีแต่ยังหน้า 2 — ดันขึ้นอีกนิดก็ขึ้นหน้า 1';
+  return 'impression สูง — โอกาส optimize เพื่อเพิ่ม clicks';
+}
+
+function renderMetrics(s) {
+  const avgCtr = s.total_clicks / s.total_impressions * 100;
+  document.getElementById('metrics').innerHTML = `
+    <div class="metric">
+      <div class="metric-label">&#x1F4C4; หน้าทั้งหมด</div>
+      <div class="metric-val">${fmt(s.total_pages)}</div>
+      <div class="metric-sub">${fmt(s.total_keywords)} keywords</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">&#x1F4CA; clicks (3 เดือน)</div>
+      <div class="metric-val val-blue">${fmt(s.total_clicks)}</div>
+      <div class="metric-sub">${fmt(s.total_impressions)} impressions</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">&#x1F3AF; avg CTR</div>
+      <div class="metric-val ${avgCtr < 1 ? 'val-red' : 'val-green'}">${avgCtr.toFixed(2)}%</div>
+      <div class="metric-sub">${avgCtr < 1 ? 'ต่ำ — ปรับ title ได้เพิ่ม clicks' : 'อยู่ในเกณฑ์ดี'}</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">&#x1F4CD; avg position</div>
+      <div class="metric-val val-amber">${s.avg_position}</div>
+      <div class="metric-sub">ส่วนใหญ่อยู่หน้า 2–3</div>
+    </div>`;
+}
+
+function renderBestMini(items) {
+  const maxClicks = items[0].clicks;
+  document.getElementById('best-mini').innerHTML = items.slice(0, 5).map((p, i) => `
+    <div class="row">
+      <div class="row-rank ${i===0?'rank-1':i===1?'rank-2':i===2?'rank-3':''}">${i+1}</div>
+      <div class="row-info">
+        <div class="row-title"><a href="${p.url}" target="_blank">${slug(p.url)}</a></div>
+        <div class="mini-bar-wrap"><div class="mini-bar ${i===0?'gold':''}" style="width:${Math.round(p.clicks/maxClicks*100)}%"></div></div>
+      </div>
+      <div class="row-stats">
+        <div class="stat"><div class="stat-val val-blue">${fmt(p.clicks)}</div><div class="stat-lbl">clicks</div></div>
+        <div class="stat"><div class="stat-val">#${pos(p.position)}</div><div class="stat-lbl">อันดับ</div></div>
+      </div>
+    </div>`).join('');
+}
+
+function renderBestFull(items) {
+  const maxClicks = items[0].clicks;
+  document.getElementById('best-full').innerHTML = items.map((p, i) => `
+    <div class="row">
+      <div class="row-rank ${i===0?'rank-1':i===1?'rank-2':i===2?'rank-3':''}">${i+1}</div>
+      <div class="row-info">
+        <div class="row-title"><a href="${p.url}" target="_blank">${slug(p.url)}</a></div>
+        <div class="row-url">${p.url}</div>
+        <div class="mini-bar-wrap" style="width:120px"><div class="mini-bar ${i===0?'gold':''}" style="width:${Math.round(p.clicks/maxClicks*100)}%"></div></div>
+      </div>
+      <div class="row-stats">
+        <div class="stat"><div class="stat-val val-blue">${fmt(p.clicks)}</div><div class="stat-lbl">clicks</div></div>
+        <div class="stat"><div class="stat-val">${fmt(p.impressions)}</div><div class="stat-lbl">imp</div></div>
+        <div class="stat"><div class="stat-val">${p.ctr.toFixed(1)}%</div><div class="stat-lbl">CTR</div></div>
+        <div class="stat"><div class="stat-val ${ctrClass(p.position)}">#${pos(p.position)}</div><div class="stat-lbl">อันดับ</div></div>
+      </div>
+    </div>`).join('');
+}
+
+function renderPriorityMini(items) {
+  document.getElementById('priority-mini').innerHTML = items.slice(0, 4).map(p => {
+    const lv = priorityLevel(p);
+    return `
+    <div class="priority-item ${lv}">
+      <div class="priority-top">
+        <div class="priority-title"><a href="${p.url}" target="_blank">${slug(p.url)}</a></div>
+        <span class="panel-badge ${lv==='high'?'badge-red':'badge-amber'}">${lv==='high'?'เร่งด่วน':'ติดตาม'}</span>
+      </div>
+      <div class="priority-meta">
+        <span>อันดับ ${pos(p.position)}</span>
+        <span>${fmt(p.impressions)} imp</span>
+        <span>CTR ${p.ctr.toFixed(1)}%</span>
+      </div>
+      <div class="ai-reason">&#x2728; ${aiReason(p)}</div>
+    </div>`}).join('');
+}
+
+function renderPriorityFull(items) {
+  document.getElementById('priority-full').innerHTML = items.map(p => {
+    const lv = priorityLevel(p);
+    return `
+    <div class="priority-item ${lv}">
+      <div class="priority-top">
+        <div class="priority-title"><a href="${p.url}" target="_blank">${slug(p.url)}</a></div>
+        <span class="panel-badge ${lv==='high'?'badge-red':'badge-amber'}">${lv==='high'?'เร่งด่วน':'ติดตาม'}</span>
+      </div>
+      <div class="row-url" style="margin-bottom:4px">${p.url}</div>
+      <div class="priority-meta">
+        <span>อันดับ ${pos(p.position)}</span>
+        <span>${fmt(p.impressions)} impressions</span>
+        <span>${fmt(p.clicks)} clicks</span>
+        <span>CTR ${p.ctr.toFixed(1)}%</span>
+      </div>
+      <div class="ai-reason">&#x2728; ${aiReason(p)}</div>
+    </div>`}).join('');
+}
+
+function renderQuickWin(items, elId) {
+  document.getElementById(elId).innerHTML = items.map((p, i) => `
+    <div class="row">
+      <div class="row-rank">${i+1}</div>
+      <div class="row-info">
+        <div class="row-title"><a href="${p.url}" target="_blank">${slug(p.url)}</a></div>
+        <div class="row-url">${p.url}</div>
+      </div>
+      <div class="row-stats">
+        <div class="stat"><div class="stat-val">${fmt(p.impressions)}</div><div class="stat-lbl">imp</div></div>
+        <div class="stat"><div class="stat-val">${fmt(p.clicks)}</div><div class="stat-lbl">clicks</div></div>
+        <div class="stat"><div class="stat-val val-amber">#${pos(p.position)}</div><div class="stat-lbl">อันดับ</div></div>
+      </div>
+    </div>`).join('');
+}
+
+function renderLowCtr(items) {
+  const maxImp = Math.max(...items.map(p => p.impressions));
+  document.getElementById('ctr-full').innerHTML = items.map(p => `
+    <div class="ctr-item">
+      <div class="ctr-bar-wrap">
+        <div class="ctr-label"><a href="${p.url}" target="_blank">${slug(p.url)}</a></div>
+        <div class="ctr-bar-bg"><div class="ctr-bar-fill" style="width:${Math.round(p.ctr/3*100)}%"></div></div>
+      </div>
+      <div class="ctr-val">${p.ctr.toFixed(1)}%</div>
+      <div class="ctr-imp">${(p.impressions/1000).toFixed(1)}K imp</div>
+      <div class="stat"><div class="stat-val ${ctrClass(p.position)}">#${pos(p.position)}</div><div class="stat-lbl">อันดับ</div></div>
+    </div>`).join('');
+}
+
+function renderKeywords(items) {
+  document.getElementById('kw-full').innerHTML = `
+    <div class="kw-row" style="border-bottom:1px solid var(--border)">
+      <div style="flex:1;font-size:11px;color:var(--faint);font-weight:500">Keyword</div>
+      <div style="font-size:11px;color:var(--faint);min-width:32px;text-align:right">อันดับ</div>
+      <div style="font-size:11px;color:var(--faint);min-width:52px;text-align:right">imp</div>
+      <div style="font-size:11px;color:var(--faint);min-width:40px;text-align:right">clicks</div>
+    </div>` +
+    items.map(q => `
+    <div class="kw-row">
+      <div class="kw-keyword">${q.keyword}</div>
+      <div class="kw-pos ${ctrClass(q.position)}">#${pos(q.position)}</div>
+      <div class="kw-imp">${fmt(q.impressions)}</div>
+      <div class="kw-imp">${fmt(q.clicks)}</div>
+    </div>`).join('');
+}
+
+function loadSite(siteName) {
+  ACTIVE_SITE = siteName;
+  const d = DATA.sites[siteName];
+
+  document.querySelectorAll('.site-chip').forEach(c => {
+    c.classList.toggle('active', c.dataset.site === siteName);
+  });
+
+  renderMetrics(d.summary);
+  renderBestMini(d.best_performers);
+  renderBestFull(d.best_performers);
+  renderPriorityMini(d.ai_priority);
+  renderPriorityFull(d.ai_priority);
+  renderQuickWin(d.quick_wins, 'quickwin-mini');
+  renderQuickWin(d.quick_wins, 'quickwin-full');
+  if (d.low_ctr) renderLowCtr(d.low_ctr);
+  if (d.keyword_wins) renderKeywords(d.keyword_wins);
+}
+
+function renderSiteBar(sites) {
+  const colors = ['#378ADD','#1D9E75','#D85A30','#534AB7','#BA7517'];
+  document.getElementById('site-bar').innerHTML =
+    Object.keys(sites).map((name, i) => `
+      <div class="site-chip ${i===0?'active':''}" data-site="${name}" onclick="loadSite('${name}')">
+        <span class="site-dot" style="background:${colors[i%colors.length]}"></span>
+        ${name}
+      </div>`).join('');
+}
+
+function showTab(name) {
+  ['overview','best','priority','quickwin','ctr','keywords'].forEach(t => {
+    document.getElementById('tab-' + t).classList.toggle('section-hidden', t !== name);
+  });
+  document.querySelectorAll('.tab').forEach((el, i) => {
+    el.classList.toggle('active', ['overview','best','priority','quickwin','ctr','keywords'][i] === name);
+  });
+}
+
+async function init() {
+  try {
+    const res = await fetch('data/dashboard.json');
+    DATA = await res.json();
+    const d = new Date(DATA.generated_at);
+    document.getElementById('sync-note').textContent =
+      'อัพเดต ' + d.toLocaleDateString('th-TH') + ' ' + d.toLocaleTimeString('th-TH', {hour:'2-digit',minute:'2-digit'});
+    renderSiteBar(DATA.sites);
+    loadSite(Object.keys(DATA.sites)[0]);
+  } catch(e) {
+    document.getElementById('sync-note').textContent = 'โหลดข้อมูลไม่ได้ — ตรวจสอบ data/dashboard.json';
+    console.error(e);
+  }
+}
+
+init();
+</script>
+</body>
+</html>
